@@ -293,7 +293,7 @@ def llm_judge(req: LLMJudgeRequest):
                         {"role": "user", "content": prompt}
                     ],
                     logprobs=True,
-                    top_logprobs=6, # 점수(1-5)토큰 확률 얻기 위해 6개의 토큰 저장
+                    top_logprobs=6, # 점수(1-5)토큰 확률 얻기 위해 5개 이상으로 설정
                     temperature=0.0, # 모델 결정성을 높이기 위해 0.0으로 설정
                 )
                 logprobs = response.choices[0].logprobs.content
