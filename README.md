@@ -122,6 +122,7 @@ TopLogprob(token='2', bytes=[50], logprob=-10.974397659301758),
 $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log \text{prob}(\text{token}_i))}$$
 
 3. 최종 점수
+   
 각 점수 토큰의 확률에 해당 점수를 곱해 모두 더한 기대값(가중 평균)으로 산출
 점수=1×P(1)+2×P(2)+3×P(3)+4×P(4)+5×P(5)
 
@@ -132,6 +133,8 @@ $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log
 토큰 '5': 약 0.0003 -> 0
 토큰 '2': 약 0.000017 -> 0
 ```
+점수 = (4x0.62) + (3x0.38)
+
 <img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/17418780-5206-42de-8923-cb6fc08a9044" />
 
 
