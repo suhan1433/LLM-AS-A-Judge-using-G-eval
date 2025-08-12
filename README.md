@@ -104,7 +104,7 @@ LLM-AS-A-Judge using G-eval
 ```
 
 ## LLM-JUDGE G-Eval 방법론
-1. Openai-api의 logprob 기능을 통해 각 평가의 점수 토큰일 때의 top 6 logprob개를 출력
+1. Openai-api의 logprob 기능을 통해 각 평가의 ```점수 토큰```일 때의 top 6 logprob개를 출력
 
 예를 들어, "점수 : 4"와 같이 점수를 생성할 때, "점수 :"까지의 토큰을 먼저 생성한 후,
 그 다음에 점수(예: '4') 토큰이 생성되는 시점의 top logprob 결과를 확인 가능
@@ -125,12 +125,12 @@ $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log
 각 점수 토큰의 확률에 해당 점수를 곱해 모두 더한 기대값(가중 평균)으로 산출
 점수=1×P(1)+2×P(2)+3×P(3)+4×P(4)+5×P(5)
 
-소수점 3째 자리에서 반올림
+소수점 2째 자리까지 반올림
 ```
-토큰 '4': 약 0.6223
-토큰 '3': 약 0.3774
-토큰 '5': 약 0.0003
-토큰 '2': 약 0.000017
+토큰 '4': 약 0.6223 -> 0.62
+토큰 '3': 약 0.3774 -> 0.38
+토큰 '5': 약 0.0003 -> 0
+토큰 '2': 약 0.000017 -> 0
 ```
 <img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/17418780-5206-42de-8923-cb6fc08a9044" />
 
