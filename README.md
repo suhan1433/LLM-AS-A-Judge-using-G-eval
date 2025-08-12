@@ -56,7 +56,11 @@ LLM-AS-A-Judge using G-eval
 | category            | str         | 평가 기준 제목                  | GOLDEN CONTENT COVERAGE                                                                                                           |
 | score               | float       | 평가 결과 점수(1-5점 사이)         | 4.47                                                                                                                              |
 | reason              | str         | 평가 결과                     | 청크는 골든 답안의 주요 단계인 로그인 과정과 성공 후 이동하는 화면에 대한 정보를 대부분 포함하고 있지만, '로그인 페이지'에 대한 구체적인 설명이 부족하여 일부 세부사항이 누락되었습니다.                        |
-| score\_prob\_result | List\[dict] | 각 평가 점수 확률 분포             | \[{"score":1, "prob":0.01}, {"score":2, "prob":0.02}, {"score":3, "prob":0.1}, {"score":4, "prob":0.5}, {"score":5, "prob":0.37}] |
+| score\_prob\_result | List\[dict] | 각 평가 점수 확률 분포             | \ "3": 0.96,
+          "4": 0.02,
+          "2": 0.02,
+          "1": 0.0,
+          "5": 0.0 |
 | total\_score        | float       | 모든 평가 점수 확률분포를 고려해 합산한 점수 | 4.23                                                                                                                              |
 
 
