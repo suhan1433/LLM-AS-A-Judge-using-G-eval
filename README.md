@@ -18,8 +18,8 @@ LLM-AS-A-Judge using G-eval
    ```
    
 4. Data Format:
-   ```
-   [ {"query": str, "answer":str, "chunks": List[str]}, ...]
+   ```JSON
+   [ {"query": str, "answer": str, "chunks": List[str]}, ...]
    ```
    
 5. Swagger 파라미터 수정
