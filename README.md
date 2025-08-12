@@ -2,23 +2,23 @@
 LLM-AS-A-Judge using G-eval
 
 
-# 사용법
+## 사용법
 1. requirements 설치
-  """
+  ```
   pip install -r requirements.txt
-  """
+  ```
 
-2. FastAPI 접속
-   """
+3. FastAPI 접속
+   ```
    uvicorn retrieve_api:app --reload
-   """
+   ```
    
-3. Swagger 접속
-   """
+4. Swagger 접속
+   ```
    주소/docs 
-   """
+   ```
    
-4. Swagger에서
+5. Swagger에서
 <img width="1442" height="512" alt="스크린샷 2025-08-11 오후 10 44 44" src="https://github.com/user-attachments/assets/4d0447a9-f0e2-4d9f-8fbf-f723d4050d29" />
 
 
