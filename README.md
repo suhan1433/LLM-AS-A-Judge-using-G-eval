@@ -104,7 +104,7 @@ LLM-AS-A-Judge using G-eval
 ```
 
 ## LLM-JUDGE G-Eval 방법론
-1. Openai-api의 logprob 기능을 통해 각 평가의 ```점수 토큰```일 때의 top 6 logprob개를 출력
+**1. Openai-api의 logprob 기능을 통해 각 평가의 ```점수 토큰```일 때의 top 6 logprob개를 출력**
 
 예를 들어, "점수 : 4"와 같이 점수를 생성할 때, "점수 :"까지의 토큰을 먼저 생성한 후,
 그 다음에 점수(예: '4') 토큰이 생성되는 시점의 top logprob 결과를 확인 가능
@@ -117,11 +117,11 @@ TopLogprob(token='5', bytes=[53], logprob=-8.099397659301758),
 TopLogprob(token='2', bytes=[50], logprob=-10.974397659301758), 
 ```
 
-2. 각 점수에 해당하는 토큰의 logprob에 대해 exp 연산 연산 후, 이 값들의 합으로 나누어 정규화 진행
+**2. 각 점수에 해당하는 토큰의 logprob에 대해 exp 연산 연산 후, 이 값들의 합으로 나누어 정규화 진행**
    
 $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log \text{prob}(\text{token}_i))}$$
 
-3. 최종 점수
+**3. 최종 점수**
    
 각 점수 토큰의 확률에 해당 점수를 곱해 모두 더한 기대값(가중 평균)으로 산출
 점수=1×P(1)+2×P(2)+3×P(3)+4×P(4)+5×P(5)
@@ -138,8 +138,16 @@ $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log
 <img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/17418780-5206-42de-8923-cb6fc08a9044" />
 
 
-5. 순위
-각 평가점수들의 합산을 통해 순위를 줄 수도 있음
+
+**5. 순위**
+각 평가점수들의 합산 또는 규칙을 주어 순위를 설정 할 수 있음
+```
+GOLDEN CHUNK IDENTIFICATION + GOLDEN CONTENT COVERAGE
+
+GOLDEN CHUNK IDENTIFICATION >= 1.5 and GOLDEN CONTENT COVERAGE >= 3.5
+```
+
+
 
 ## 소요 시간 및 비용
 | 항목 | 내용 |
