@@ -118,5 +118,6 @@ TopLogprob(token='2', bytes=[50], logprob=-10.974397659301758),
 ```
 
 2. 각 점수에 해당하는 토큰의 logprob에 대해 exp 연산 연산 후, 이 값들의 합으로 나누어 정규화 진행
+   
 $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log \text{prob}(\text{token}_i))}$$
 
