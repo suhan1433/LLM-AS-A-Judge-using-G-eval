@@ -4,7 +4,7 @@ LLM-AS-A-Judge using G-eval
 
 ## 사용법
 1. requirements 설치
-  ```
+```
   pip install -r requirements.txt
   ```
 
