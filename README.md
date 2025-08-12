@@ -39,6 +39,9 @@ LLM-AS-A-Judge using G-eval
 ## 입출력 결과
 
 ### 입력
+
+- query_answer_chunks_data.json
+
 ```
 {
     "query": "웹사이트 관리자 콘솔에 로그인하려면 어떻게 해야 하나요?",
@@ -57,7 +60,9 @@ LLM-AS-A-Judge using G-eval
 | score               | float       | 각 평가 결과 점수(0-5점 사이)         | 4.47 (4x0.53 + 5x0.47)                                                                                                       |
 | reason              | str         | 각 평가 결과                     | 청크는 골든 답안의 주요 단계인 로그인 과정과 성공 후 이동하는 화면에 대한 정보를 대부분 포함하고 있지만, '로그인 페이지'에 대한 구체적인 설명이 부족하여 일부 세부사항이 누락되었습니다. |
 | score\_prob\_result | List\[dict] | 각 평가 점수 확률 분포             | {<br>  "4": 0.53,<br>  "5": 0.47,<br>  "3": 0.0,<br>}                        |
-| total\_score        | float       | 모든 평가 점수 확률분포를 고려해 합산한 점수 | 4.23                                                                                                       |
+| total\_score        | float       | 모든 평가 점수 확률분포를 고려해 합산한 점수 | 6.47                                                                                                       |
+- llm_judge_result.json
+
 ```python
     "score_prob_result": [
       [ # 첫번째 청크 LLM-JUDGE 결과
@@ -93,7 +98,7 @@ LLM-AS-A-Judge using G-eval
       ]
    ],
   "total_score": [
-      6.47, # 첫번째 청크 LLM-JUDGE 총 점수 (2 + 4.47)
+      6.47, # 첫번째 청크 LLM-JUDGE 총 점수 (2 + 4.47) -> 만약 "GOLDEN CHUNK IDENTIFICATION" 범주형으로 설정한다면 점수 합산에서 제외
       2.1   # 두번째 청크 LLM-JUDGE 총 점수
     ]
 ```
