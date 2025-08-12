@@ -18,7 +18,7 @@ LLM-AS-A-Judge using G-eval
    ```
    
 4. Data Format:
-   ```JSON
+   ```
    [ {"query": str, "answer":str, "chunks": List[str]}, ...]
    ```
    
