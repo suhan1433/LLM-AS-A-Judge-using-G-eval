@@ -110,13 +110,13 @@ LLM-AS-A-Judge using G-eval
 그 다음에 점수(예: '4') 토큰이 생성되는 시점의 top logprob 결과를 확인 가능.
 
 출력 예시:
+```
 TopLogprob(token='4', bytes=[52], logprob=-0.47439804673194885), 
 TopLogprob(token='3', bytes=[51], logprob=-0.9743980169296265), 
 TopLogprob(token='5', bytes=[53], logprob=-8.099397659301758), 
 TopLogprob(token='2', bytes=[50], logprob=-10.974397659301758), 
+```
 
 2. 각 점수에 해당하는 토큰의 logprob에 대해 exp 연산 연산 후, 이 값들의 합으로 나누어 정규화 진행
-\[
-P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log \text{prob}(\text{token}_i))}
-\]
+$$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log \text{prob}(\text{token}_i))}$$
 
