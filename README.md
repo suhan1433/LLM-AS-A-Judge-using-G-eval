@@ -1,5 +1,7 @@
 # LLM-AS-A-Judge-using-G-eval
 LLM-AS-A-Judge using G-eval
+## 개요
+
 
 
 ## 사용법
@@ -145,9 +147,9 @@ $$P(\text{token}) = \frac{\exp(\log \text{prob}(\text{token}))}{\sum_i \exp(\log
 
 각 평가점수들의 합산 또는 규칙을 주어 순위 또는 골든청크 선정 할 수 있음
 ```
-GOLDEN CHUNK IDENTIFICATION + GOLDEN CONTENT COVERAGE,
+GOLDEN CHUNK IDENTIFICATION + GOLDEN CONTENT COVERAGE, # 각 점수의 합
 
-GOLDEN CHUNK IDENTIFICATION >= 1.5 and GOLDEN CONTENT COVERAGE >= 3.5
+GOLDEN CHUNK IDENTIFICATION >= 1.5 and GOLDEN CONTENT COVERAGE >= 3.5 # 규칙 기반
 ```
 
 
