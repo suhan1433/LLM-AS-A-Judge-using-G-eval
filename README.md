@@ -1,8 +1,9 @@
 # LLM-AS-A-Judge-using-G-eval
-LLM-AS-A-Judge using G-eval
+LLM As A Judge 방법을 OpenAI API를 활용하여, 점수에 해당하는 확률 분포를 뽑고 이를 활용하여 평가 점수를 얻도록 함
+
 ## 개요
-
-
+이 코드는 검색성능파이프라인을 구축하면서, Question과 Answer만 주어진 상황에서 골든청크를 선정할 필요가 있어 골든청크를 선정하기 위해 LLM As A Judge 방법으로 시도한 것입니다.
+DeepEval 같은 평가 프레임워크를 사용할 때, 원하는 토큰을 통해 평가하는지와 확률 분포를 확인 할 수 없어 직접 OpenAI API의 LogProb을 뽑을 수 있는 기능으로 
 
 ## 사용법
 1. requirements 설치
