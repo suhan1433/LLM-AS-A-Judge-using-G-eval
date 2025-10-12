@@ -1,13 +1,13 @@
 # LLM-as-a-judge-using-G-eval
 LLM-as-a-judge 방법론을 OpenAI API를 활용하여 구현하되, 단순한 점수 출력 대신 각 점수에 대한 확률 분포를 추출하여 모델의 불확실성을 반영한 보다 정확한 평가 점수를 산출하는 방법
 
-## 개요
+## Overview
 
 이 방법론은 검색 성능 파이프라인 구축 과정에서 Question과 Answer만 주어진 상황에서 골든 청크(Golden Chunk)를 선정하기 위해 개발됨
 기존 LLM-as-a-judge 방식의 한계를 보완하여 모델의 판단 불확실성을 정량적으로 반영한 평가 시스템을 구현함
 
 
-## 기존 LLM-as-a-judge의 문제점
+## Problems of the existing LLM-as-a-Judge approaches
 
 - 불확실성 미반영 문제
 
@@ -40,7 +40,7 @@ OpenAI API의 logprobs 기능을 직접 활용하여:
 
 
 
-## 사용법
+## Quick Start
 1. requirements 설치
    ```
    pip install -r requirements.txt
@@ -74,9 +74,9 @@ OpenAI API의 logprobs 기능을 직접 활용하여:
 6. 각 파라미터 설명 맨 아래 스키마에서 확인 가능
 <img width="729" height="511" alt="스크린샷 2025-08-11 오후 10 44 57" src="https://github.com/user-attachments/assets/5a6d80df-f696-4fba-a271-f927f1fa14d0" />
 
-## 입출력 결과
+## Input/Output
 
-### 입력
+### Input
 
 - query_answer_chunks_data.json
 
@@ -91,7 +91,7 @@ OpenAI API의 logprobs 기능을 직접 활용하여:
   },
 ```
 
-### 출력
+### Output
 | **필드명**             | **타입**      | **설명**                    | **예시 (값)**                                                                                                 |
 | ------------------- | ----------- | ------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | category            | str         | 각 평가 기준 제목                  | GOLDEN CONTENT COVERAGE                                                                                    |
@@ -141,7 +141,7 @@ OpenAI API의 logprobs 기능을 직접 활용하여:
     ]
 ```
 
-## LLM-judge G-Eval 방법론
+## LLM-judge G-Eval Method
 **1. Openai-api의 logprob 기능을 통해 각 평가의 ```점수 토큰```일 때의 logprob를 선택**
 
 예를 들어, "점수 : 4"와 같이 점수를 생성할 때, "점수 :"까지의 토큰을 먼저 생성한 후,
